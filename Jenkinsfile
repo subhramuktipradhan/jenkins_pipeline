@@ -1,12 +1,15 @@
-pipeline{
-    agent any{
-        stages{
-            stage("checkout code"){
-                steps{
-                    checkout scm
-                }
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                checkout scm
             }
-            stage("extract data"){
+        }
+
+        stage('Extract Data') {
+            steps {
                 bat "C:\\Users\\Subhra\\AppData\\Local\\Programs\\Python\\Python314\\python.exe extract.py"
             }
         }
